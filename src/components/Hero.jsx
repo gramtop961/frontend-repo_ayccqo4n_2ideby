@@ -42,6 +42,52 @@ function LogoMark({ className = '' }) {
   )
 }
 
+function NeonOrb() {
+  // Lightweight 3D-ish animated neon rings using CSS 3D transforms + framer-motion
+  const rings = [
+    { size: 720, rotateZSpeed: 40, x: 0, y: -40, opacity: 0.25 },
+    { size: 560, rotateZSpeed: -55, x: -80, y: 20, opacity: 0.25 },
+    { size: 420, rotateZSpeed: 70, x: 60, y: 40, opacity: 0.3 },
+    { size: 300, rotateZSpeed: -90, x: 0, y: 0, opacity: 0.5 },
+  ]
+
+  return (
+    <div className="pointer-events-none absolute inset-0 flex items-center justify-center" style={{ perspective: 1000 }}>
+      {rings.map((r, i) => (
+        <motion.div
+          key={i}
+          initial={{ rotateZ: 0 }}
+          animate={{ rotateZ: 360 }}
+          transition={{ repeat: Infinity, ease: 'linear', duration: Math.abs(r.rotateZSpeed) }}
+          style={{
+            transformStyle: 'preserve-3d',
+            rotateX: '55deg',
+            rotateY: '25deg',
+            x: r.x,
+            y: r.y,
+            opacity: r.opacity,
+          }}
+          className="relative"
+        >
+          <div
+            className="rounded-full border border-pink-400/30"
+            style={{
+              width: r.size,
+              height: r.size,
+              boxShadow:
+                '0 0 40px rgba(236,72,153,0.25), inset 0 0 60px rgba(236,72,153,0.15)',
+              filter: 'drop-shadow(0 0 20px rgba(236,72,153,0.35))',
+            }}
+          />
+        </motion.div>
+      ))}
+
+      {/* Vertical light beam for extra depth */}
+      <div className="absolute h-[120vh] w-[40vw] -translate-x-1/2 left-1/2 top-[-10vh] rounded-full bg-gradient-to-b from-pink-500/10 via-pink-400/5 to-transparent blur-3xl" />
+    </div>
+  )
+}
+
 function Hero() {
   return (
     <section className="relative h-[92vh] w-full overflow-hidden">
@@ -50,7 +96,9 @@ function Hero() {
         <div className="pointer-events-none absolute -top-32 left-1/2 h-[60vh] w-[60vh] -translate-x-1/2 rounded-full bg-pink-500/20 blur-3xl blob animate-float-slow" />
         <div className="pointer-events-none absolute top-24 -left-24 h-[50vh] w-[50vh] rounded-full bg-pink-400/20 blur-3xl blob animate-float-slower" />
         <div className="pointer-events-none absolute -bottom-24 -right-16 h-[55vh] w-[55vh] rounded-full bg-fuchsia-500/20 blur-3xl blob animate-rotate-slow" />
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/90" />
+        {/* Removed darker gradient overlay to blend first section with the global background */}
+        {/* 3D neon orb */}
+        <NeonOrb />
       </div>
 
       {/* Content */}
