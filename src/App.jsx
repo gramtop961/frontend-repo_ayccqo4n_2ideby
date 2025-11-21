@@ -20,7 +20,7 @@ function App() {
 
       <Navbar />
 
-      <main className="relative">
+      <main className="relative pt-20">
         <Outlet />
       </main>
     </div>

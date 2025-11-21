@@ -37,7 +37,7 @@ function Navbar() {
   return (
     <header className="fixed inset-x-0 top-0 z-50">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <div className="mt-4 flex items-center justify-between rounded-2xl border border-white/10 bg-black/30 px-3 py-2 backdrop-blur supports-[backdrop-filter]:bg-black/20">
+        <div className="flex items-center justify-between rounded-2xl border border-white/10 bg-black/30 px-3 py-2 backdrop-blur supports-[backdrop-filter]:bg-black/20">
           <Link to="/" className="flex items-center gap-2">
             <div className="h-8 w-8">
               <MiniLogo className="h-8 w-8" />
@@ -50,7 +50,6 @@ function Navbar() {
             <NavLink to="/roadmap" className={linkClasses}>Roadmap</NavLink>
             <NavLink to="/sdk" className={linkClasses}>SDK</NavLink>
             <NavLink to="/docs" className={linkClasses}>Docs</NavLink>
-            <a href="#newsletter" className="px-3 py-2 rounded-lg text-sm font-medium text-pink-300 hover:text-white hover:bg-white/5">Newsletter</a>
           </nav>
 
           <button onClick={() => setOpen(!open)} className="inline-flex items-center justify-center rounded-lg p-2 text-slate-300 hover:bg-white/5 sm:hidden" aria-label="Toggle menu">
@@ -67,7 +66,6 @@ function Navbar() {
               <NavLink onClick={() => setOpen(false)} to="/roadmap" className={linkClasses}>Roadmap</NavLink>
               <NavLink onClick={() => setOpen(false)} to="/sdk" className={linkClasses}>SDK</NavLink>
               <NavLink onClick={() => setOpen(false)} to="/docs" className={linkClasses}>Docs</NavLink>
-              <a onClick={() => setOpen(false)} href="#newsletter" className="px-3 py-2 rounded-lg text-sm font-medium text-pink-300 hover:text-white hover:bg-white/5">Newsletter</a>
             </div>
           </div>
         )}

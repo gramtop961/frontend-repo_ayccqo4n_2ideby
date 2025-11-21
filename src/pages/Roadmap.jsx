@@ -41,7 +41,7 @@ const phases = [
 
 function Roadmap() {
   return (
-    <main className="relative min-h-screen px-6 pt-28 pb-24">
+    <main className="relative min-h-screen px-6 pt-8 pb-24">
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute -top-40 left-1/2 h-[70vh] w-[70vh] -translate-x-1/2 rounded-full bg-pink-500/20 blur-3xl blob animate-float-slow" />
         <div className="absolute top-32 -left-20 h-[55vh] w-[55vh] rounded-full bg-fuchsia-500/20 blur-3xl blob animate-rotate-slow" />
