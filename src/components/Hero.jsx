@@ -41,7 +41,7 @@ function Hero() {
             transition={{ duration: 0.9, delay: 0.2 }}
             className="mx-auto mb-8 max-w-2xl text-balance text-lg text-slate-200/90 sm:text-xl"
           >
-            Choise without compromise. A distributed chat network with blockchain identity and an auditable chain. Connect your preferred service node—host your own for privacy or choose providers—and interoperate seamlessly.
+            Choice without compromise. A distributed chat network with blockchain identity and an auditable chain. Connect your preferred service node—host your own for privacy or choose providers—and interoperate seamlessly.
           </motion.p>
 
           <motion.div
